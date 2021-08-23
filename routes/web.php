@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 //
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [\App\Http\Controllers\User\MainController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\User\MainController::class, 'index'])->name('index');
+Route::get('/about', [\App\Http\Controllers\User\MainController::class, 'about'])->name('about');
 
 //admin panel
 Route::prefix('admin')->name('admin.')->group(function () {
