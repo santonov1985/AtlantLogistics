@@ -96,8 +96,8 @@
     <!-- main about -->
     <div class="main__company">
         <!-- main company -->
-        <div class="main__company__img image-cover">
-            <img src="{{ asset('/img/index/img-6.jpg') }}" alt="img-6">
+        <div class="main__company__img">
+            <img src="{{ asset('/img/index/img-6.jpg') }}" class="image-cover" alt="img-6">
         </div>
         <div class="main__company__right dark">
             @foreach($about as $item)
