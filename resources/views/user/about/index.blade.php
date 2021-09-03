@@ -1,6 +1,7 @@
 @extends('user.layouts.app')
 
 @section('content')
+
     <div class="pages about"><!-- pages content -->
         <div class="banner"><!-- banner -->
             <img src="{{ asset('/img/about/img-10.jpg') }}" alt="">
@@ -9,16 +10,15 @@
 
         <div class="breadcrums"><!-- breadcrums -->
             <ul>
-                <li><a href="/ru/">Главная</a></li>
+                <li><a href="{{ route('index') }}">Главная</a></li>
                 <li><a href="#">О нас</a></li>
             </ul>
         </div><!-- breadcrums -->
+
         <div class="container">
-            <h1>О ALC</h1>
-
-
+            @foreach($about as $item)
+            <h1>{{ $item->title }}</h1>
             <div class="about__slider">
-
 
                 <a href="{{ asset('/img/about/file_1507011828_506300648.jpeg') }}" class="fancy" rel="group">
 
@@ -26,13 +26,11 @@
                     <p>Лидер года 2017</p>
                 </a>
 
-
                 <a href="{{ asset('/img/about/file_1507011764_373045781.jpg') }}" class="fancy" rel="group">
 
                     <img src="{{ asset('/img/about/image1.jpeg') }}" alt="img-11">
                     <p>Специалист Года</p>
                 </a>
-
 
                 <a href="{{ asset('/img/about/file_1507011754_990417442.jpg') }}" class="fancy" rel="group">
 
@@ -40,13 +38,11 @@
                     <p>Руководитель года</p>
                 </a>
 
-
                 <a href="{{ asset('/img/about/file_1507011736_29883553.jpg') }}" class="fancy" rel="group">
 
                     <img src="{{ asset('/img/about/image3.jpeg') }}" alt="img-11">
                     <p>Лидер Года 2017</p>
                 </a>
-
 
                 <a href="{{ asset('/img/about/file_1502423749_197387939.jpg') }}" class="fancy" rel="group">
 
@@ -54,28 +50,18 @@
                     <p>Лучший руководитель 2016</p>
                 </a>
 
-
                 <a href="{{ asset('/img/about/file_1502423730_773854278.jpg') }}" class="fancy" rel="group">
 
                     <img src="{{ asset('/img/about/image5.jpeg') }}" alt="img-11">
                     <p>Лидер отрасли 2016 года</p>
                 </a>
-
             </div>
-            <h6>
-                Мы рады приветствовать Вас на официальном сайте TOO &laquo;Atlant Logistics Company&raquo;!</h6>
-            <p>
-                ТОО &laquo;Atlant Logistics Company&raquo; активно развивающаяся, транспортно-экспедиторская компания, основана в 2013 году. За время непрерывной работы мы разработали и успешно применили уникальный логистический механизм и современную систему организации перевозки по всей территории Казахстана, которые не имеют аналогов на рынке транспортных услуг.</p>
-            <p class="decor-text">
-                <strong>TOO &laquo;Atlant Logistics Company&raquo;</strong> &mdash; это надежный и ответственный партнер в Вашем бизнесе, гарантирующий высокое качество услуг по организации транспортно &ndash; складских услуг.</p>
-            <p class="about-quotes-text">
-                <strong>Наша цель</strong> &ndash; укрепление позиций TOO &laquo;Atlant Logistics Company&raquo; в логистической и транспортной сфере.</p>
-            <p>
-                &nbsp;</p>
-            <p>
-                &nbsp;</p>
-            <p>
-                &nbsp;</p>
+            <div style="min-height: 450px">
+                {!! $item->description !!}
+            </div>
+
+
+            @endforeach
 
         </div>
         <div class="about__advantages dark"><!-- about advantages -->
@@ -140,4 +126,5 @@
     <div class="banner-down"><!-- banner down -->
         <img src="{{ asset('/img/about/img-14.jpg') }}" alt="img-14">
     </div><!-- banner down -->
+
 @endsection

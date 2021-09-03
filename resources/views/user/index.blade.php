@@ -79,114 +79,39 @@
         <div class="container">
             <h1>Atlant Logistics Company</h1>
 
-            <a href="/services/" class="main__about__block">
-
-                <img src="{{ asset('/img/index/image.jpeg?w=540&h=290&image=/cms/uploads/file_1502423347_452243306.jpg') }}" alt="img-2">
+            @foreach($service as $item)
+            <a href="{{ route('service') }}" class="main__about__block">
+                <img src="{{ $item->icon }}" alt="img-2">
                 <span class="main__about__block__text">
-                    <h3>Складирование грузов</h3>
+                    <h3>{{ $item->title }}</h3>
                     <p>
-                        Мы предлагаем обширный спектр услуг по складированию и хранению грузов:</p>
-                    <ul>
-                        <li>
-                                Краткосрочное и долгосрочное хранение;</li>
-                        <li>
-                                Погрузку и разгрузку;</li>
-                        <li>
-                                Грузовую маркировку и упаковку;</li>
-                        <li>
-                                Упаковочные услуги...</li>
-                    </ul>
+                        {!! $item->description !!}
+                    </p>
+
                 </span>
+                @endforeach
             </a>
-
-            <a href="/services/" class="main__about__block">
-
-                <img src="{{ asset('/img/index/image1.jpeg?w=540&h=290&image=/cms/uploads/file_1502423347_452243306.jpg') }}" alt="img-2">
-                <span class="main__about__block__text">
-                    <h3>Ж/д перевозки</h3>
-                    <p>
-                        Наши услуги по железнодорожным перевозкам включают в себя следующее:</p>
-                    <ul>
-                        <li>
-                                Разработка оптимальных маршрутов поставки;</li>
-                        <li>
-                                Расчет ж/д тарифов и оптимизация транспортных издержек;</li>
-                        <li>
-                                Оформление товаросопроводительных документов...</li>
-                    </ul>
-                </span>
-            </a>
-
-            <a href="/services/" class="main__about__block">
-
-{{--                <img src="/cms/image.php?w=540&h=290&image=/cms/uploads/file_1502423347_452243306.jpg" alt="img-2">--}}
-                <img src="{{ asset('/img/index/image2.jpeg?w=540&h=290&image=/cms/uploads/file_1502423347_452243306.jpg') }}" alt="img-2">
-                <span class="main__about__block__text">
-                        <h3>Авиаперевозки</h3>
-                        <p>
-                        	Компания &laquo;Atlant Logistics Company&raquo; предоставляет полный комплекс логистических услуг по авиаперевозкам:</p>
-                        <ul>
-                            <li>
-                            		Квалифицированная консультация по вопросам организации перевозок авиатранспортом;</li>
-                            <li>
-                            		Разработка оптимальной логистической цепочки доставки грузов;</li>
-                            <li>
-                            		Оперативный расчет стоимости авиаперевозки...</li>
-                        </ul>
-
-                    </span>
-            </a>
-
-            <a href="/services/" class="main__about__block">
-
-                <img src="{{ asset('/img/index/image3.jpeg?w=540&h=290&image=/cms/uploads/file_1502423347_452243306.jpg') }}" alt="img-2">
-                <span class="main__about__block__text">
-                        <h3>Автоперевозки</h3>
-                        <p>
-                        	Наши услуги по автоперевозке включают в себя:</p>
-                        <ul>
-                            <li>
-                            		Доставка грузов по территории Республики Казахстан &laquo;от двери до двери&raquo;;</li>
-                            <li>
-                            		Организация международных автомобильных перевозок;</li>
-                            <li>
-                            		Консолидация...</li>
-                        </ul>
-                </span>
-            </a>
-
         </div>
     </div>
     <!-- main about -->
     <div class="main__company">
         <!-- main company -->
-        <div class="main__company__img">
+        <div class="main__company__img image-cover">
             <img src="{{ asset('/img/index/img-6.jpg') }}" alt="img-6">
         </div>
         <div class="main__company__right dark">
+            @foreach($about as $item)
             <h2>
-                <a href="/ru/about/">
-
-                    О компании
-
+                <a href="{{ route('about') }}">
+                    {{ $item->title }}
                     <span class="decor-line">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </span>
-
+                    </span>
                 </a>
-            </h2>
-            <p>
-                <strong>Мы рады приветствовать Вас на официальном сайте TOO &laquo;Atlant Logistics Company&raquo;</strong>
-            </p>
-            <p>
-                Atlant Logistics Company активно развивающаяся, транспортно-экспедиторская компания, основана в 2013 году. За время непрерывной работы мы разработали и успешно применили уникальный логистический механизм и современную систему организации перевозки по всей территории Казахстана, которые не имеют аналогов на рынке транспортных услуг.</p>
-            <p>
-                Вежливый персонал, компетентно ответит на все ваши вопросы и просьбы. Вовремя сообщит и представит необходимую информацию о ваших отправлениях, обеспечит необходимое качество услуг и достойный сервис обслуживания.</p>
-            <p>
-                TOO &laquo;Atlant Logistics Company&raquo; &mdash; это надежный и ответственный партнер в Вашем бизнесе, гарантирующий высокое качество услуг по организации транспортно &ndash; складских услуг.</p>
-
+                {!! $item->description !!}
+            @endforeach
         </div>
     </div>
     <!-- main company -->
@@ -308,7 +233,7 @@
         <!-- main news -->
         <div class="container">
             <h2>
-                <a href="/ru/news/">
+                <a href="{{ route('news') }}">
                     Новости
                     <span class="decor-line">
                             <span></span>
@@ -318,30 +243,18 @@
                 </a>
             </h2>
 
+            @foreach($news as $item)
             <div class="main__news__block">
-                <span class="main__news__block__date">03.09.2018</span>
-                <a href="/ru/news/1223-zheleznyje_dorogi_v_kyrgyzstane_sozdajut_70_problem_dla_eksporterov/">Железные дороги в Кыргызстане создают 70% проблем для экспортеров</a>
-                <p>Большинство проблем у бизнесменов, которые возят товары из Казахстана и России в Кыргызстан, возникает из-за местных железных дорог.</p>
+                <span class="main__news__block__date">{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</span>
+                <a href="{{ route('news.show', ['id' => $item->id]) }}">{{ $item->title }}</a>
+                <p>{!! $item->description_min !!}</p>
             </div>
+            @endforeach
 
-            <div class="main__news__block">
-                <span class="main__news__block__date">27.08.2018</span>
-                <a href="/ru/news/1222-objem_perevozok_vyros_na_7_za_god_v_kazahstane/">Объем перевозок вырос на 7% за год в Казахстане</a>
-                <p>Треть всех грузоперевозок в РК приходится на ВКО и Карагандинскую область.</p>
-            </div>
-
-            <div class="main__news__block">
-                <span class="main__news__block__date">23.08.2018</span>
-                <a href="/ru/news/1221-objem_kontejnernyh_perevozok_cherez_kazahstan_za_sem_mesacev_vyros_na_40__mir_rk/">Объем контейнерных перевозок через Казахстан за семь месяцев вырос на 40% — МИР РК</a>
-                <p>Вместе с тем достигнут плановый показатель по транспортному комплексу. ИФО за период январь-июль составил 104,9%.</p>
-            </div>
-
-            <div class="main__news__block">
-                <span class="main__news__block__date">13.08.2018</span>
-                <a href="/ru/news/1220-rossija_postroit_avtomagistral_kotoraja_svazhet_kazahstan_i_belarus/">Россия построит автомагистраль, которая свяжет Казахстан и Беларусь</a>
-                <p>Утвержден срок начала строительства — 2019 год.</p>
-            </div>
-
+            {{ $news->links('pagination') }}
         </div>
     </div>
+    <div class="banner-down"><!-- banner down -->
+        <img src="{{ asset('/img/index/img-7.jpg') }}" alt="img-23">
+    </div><!-- banner down -->
 @endsection

@@ -24,39 +24,48 @@
                 </div>
                 <!-- header phones -->
                 <a href="http://tracking.atlantlogistics.kz/" target="_blank" class="btn header-row__track">Отследить груз </a>
-                <a href="/ru/form/" class="btn header-row__issue">Оформить заявку</a>
+                <a href="{{ route('order') }}" class="btn header-row__issue">Оформить заявку</a>
 
                 <a href="#" class="header-row__phone-btn"></a>
                 <a href="#" class="header-row__lang-btn"></a>
             </div>
             <div class="header-row down">
                 <nav class="nav">
+                    @php
+                        $routs = [
+                            [
+                                "title" => "Главная",
+                                "link" => "index"
+                            ],
+                            [
+                                "title" => "О компании",
+                                "link" => "about"
+                            ],
+                            [
+                                "title" => "Услуги",
+                                "link" => "service"
+                            ],
+                            [
+                                "title" => "Новости",
+                                "link" => "news"
+                            ],
+                            [
+                                "title" => "Контакты",
+                                "link" => "contact"
+                            ],
+                        ];
+                    @endphp
                     <!-- header nav -->
                     <ul>
-                        <li class="active">
-                            <a href="{{ route('index') }}">Главная</a>
-                        </li>
-                        </li>
-                        <li>
-
-                            <a href="{{ route('about') }}">О компании</a>
-                        </li>
-                        <li>
-
-                            <a href="/ru/services/">Услуги</a>
-                        </li>
-                        <li>
-
-                            <a href="/ru/1091-vopros_otvet.html">Вопрос-ответ</a>
-                        </li>
-                        <li>
-
-                            <a href="/ru/news/">Новости</a>
-                        </li>
-                        <li>
-
-                            <a href="/ru/contacts/">Контакты</a>
-                        </li>
+                        @foreach($routs as $route)
+                            @if (Route::is($route["link"]))
+                                <li class="active">
+                            @else
+                                <li>
+                            @endif
+                                <a href="{{ route($route["link"]) }}">{{ $route["title"] }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </nav>
                 <!-- header nav -->

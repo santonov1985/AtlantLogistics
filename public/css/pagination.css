@@ -1,0 +1,11 @@
+/* pagination */
+.pagin { list-style: none; padding: 0; margin: 25px 0; }
+.pagin li { margin-right: 5px; margin-bottom: 5px; display: inline-block; vertical-align: top; }
+.pagin li a, .pagin li span { display: block; width: 38px; height: 38px; padding-top: 8px; text-align: center; font-size: 16px; font-family: "ubuntumedium"; border: 1px solid #52aeb4; color: #52aeb4; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
+.pagin li a:hover { background-color: #52aeb4; color: #fff; }
+.pagin .active a { background-color: #52aeb4; color: #fff; }
+.pagin .prev a { background: #fff url(../img/left-arrow.svg) no-repeat center center; background-size: 15px; }
+.pagin .next a { background: #fff url(../img/right-arrow.svg) no-repeat center center; background-size: 15px; }
+.pagin .prev a:hover, .pagin .next a:hover { background-color: #fff; }
+
+/* pagination */
