@@ -20,7 +20,7 @@
                 {{--Кнопка добавить--}}
             </div>
 
-            <table class="table">
+            <table class="table table-responsive">
                 <tr>
                     <th>Заголовок</th>
                     <th>Картинка</th>
