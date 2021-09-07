@@ -12,7 +12,7 @@
                     <h5>О Компании</h5>
                 </div>
                 {{--Кнопка добавить--}}
-                @if($about == null)
+                @if($about->isEmpty())
                 <div class="btn-toolbar">
                     <a class="btn btn-sm btn-primary" title="Добавить новость" href="{{ route('about.create') }}">
                         <i class="fa fa-plus"></i>
